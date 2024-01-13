@@ -17,19 +17,21 @@ public class JiraTest {
 		// TODO Auto-generated method stub
 		// this. --> refers to current class variable
 		
-//		Pojo pojo = new Pojo();
-//		pojo.setId("1");
-//		NestedClass nestedClass = new NestedClass();
-//		nestedClass.setName("nested1");
-//		pojo.setNestedClass(nestedClass);
-//		List<String> strings = new ArrayList<String>();
-//		strings.add("string1");
-//		strings.add("string2");
-//		
-//		pojo.setStringList(strings);
-//		
-////		{ "id" : "1", "nestedClass" :{"name" : "nested1"} , "stringList" : ["string2","string2"]};
-//		System.out.println(pojo);
+		Pojo pojo = new Pojo();
+		Pojo p1 = new Pojo("12");
+		pojo.setId("1");
+		NestedClass nestedClass = new NestedClass();
+		nestedClass.setName("nested1");
+		pojo.setNestedClass(nestedClass);
+		List<String> strings = new ArrayList<String>();
+		strings.add("string1");
+		strings.add("string2");
+		
+		pojo.setStringList(strings);
+		
+//		{ "id" : "1", "nestedClass" :{"name" : "nested1"} , "stringList" : ["string2","string2"]};
+		System.out.println(pojo);
+		
 		RestAssured .baseURI="http://localhost:8080";
 		
 		SessionFilter sesssion = new SessionFilter();
@@ -85,6 +87,8 @@ public class JiraTest {
 				Assert.assertEquals(respComm, expectMsg);
 				break;
 			}
+			
+//			Comment
 		}
 		
 		
